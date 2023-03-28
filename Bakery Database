@@ -1,0 +1,31 @@
+# Here I created a database to store important information about a bakery's merchandise, baking schedule, location, inventory, and price. 
+CREATE TABLE merch(
+id integer PRIMARY KEY,
+name TEXT,
+location TEXT,
+price integer,
+quantity integer, restock_day TEXT);
+
+
+insert into merch values (3, "PB_Cookie", "caseA" ,2.5, 50, "Tuesday");
+insert into merch values (4, "RedVelvet_Cookie", "caseA",3, 35, "Monday");
+
+insert into merch values (5, "Confetti_Cookie", "caseA", 2.5, 35, "Tuesday");
+insert into merch values (6, "Monster_Cookie", "caseA" ,3, 35, "Thursday");
+insert into merch values (7, "Double_Cookie", "caseA", 3, 50, "Monday");
+insert into merch values (8, "Vanilla_cake", "caseB", 20, 3, "Thursday");
+insert into merch values (9, "Choc_cake", "caseB", 23, 2, "Thursday");
+insert into merch values (10, "Carrot_cake", "caseB", 25, 2, "Tuesday");
+insert into merch values (11, "RedVelvet_cake", "counter", 25, 2, "Monday");
+insert into merch values (12, "Marble_cake", "counter",25, 2, "Thursday");
+insert into merch values (13, "Coconut_cake", "caseA",25, 1, "Thursday");
+insert into merch values (14, "Caramel_cake" , "caseA", 20, 1, "Monday");
+insert into merch values (15, "Wedding_cake", "caseA", 30, 3, "Tuesday");
+insert into merch values (1, "Choc_Cookie", "caseA", 2.5, 50, "Monday" );
+insert into merch values (2, "Sugar_Cookie", "Counter", 2.5, 50, "Tuesday"); 
+
+#Next I organized it by price, then added the prices of each item accordin to it's location
+select * from merch order by price;
+
+select name, sum(price) from merch group by location
+
